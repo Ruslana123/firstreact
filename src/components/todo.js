@@ -33,10 +33,15 @@ class  Todo extends React.Component {
                     id: 5,
                     title: "Fifth todo",
                     description: "Creat fifth todo",
+                },
+                {
+                    id: 6,
+                    title: "Sixth todo",
+                    description: "Creat sixth todo",
                 }
 
 
-            ]
+            ],
 
             newTodo: "",
 
@@ -58,16 +63,18 @@ class  Todo extends React.Component {
     }
 
     hendleAddTodo () {
-         const newTodo = {
-             title: this.state.newTodo,
-             description: "Description",
-             id: this.state.todos.length,
-         };
+        if(this.state.newTodo){
+            const newTodo = {
+                title: this.state.newTodo,
+                description: "Description",
+                id: this.state.todos.length + 1,
+            };
 
-         this.setState( {
-             newTodo: "",
-             todos: [...this.state.todos, newTodo]
-         })
+            this.setState( {
+                newTodo: "",
+                todos: [...this.state.todos, newTodo]
+            })
+        }
     }
 
 
@@ -76,8 +83,14 @@ class  Todo extends React.Component {
         return (
             <div className="todo-wrapper">
                 <div className="todo-header">Todo</div>
-                <input onChange={(event) => {
-                    console.log(event.target.value);
+                <input
+                    value={this.state.newTodo}
+                    placeholder={"Start place new todo now..."}
+                    onChange={(event) => {
+                    this.setState({
+                        ...this.state,
+                        newTodo: event.target.value,
+                    })
                 }}
                 />
                 <div className="add-todo" onClick={this.addNewTodo}>Add new todo</div>
