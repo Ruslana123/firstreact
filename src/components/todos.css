@@ -1,0 +1,64 @@
+.todo-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #61dafb;
+
+}
+
+.todo-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: burlywood;
+    align-items: center;
+
+}
+
+.todo-item {
+    background: darkgray;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+.todo-title {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 4px;
+
+}
+
+.todo-description {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 6px;
+
+}
+
+.todo-delete {
+    background: coral;
+    color: #282c34;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 20px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.add-todo {
+    background: coral;
+    color: #282c34;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 20px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
