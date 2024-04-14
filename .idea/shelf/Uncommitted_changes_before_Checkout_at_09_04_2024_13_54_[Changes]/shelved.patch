@@ -1,0 +1,23 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport './App.css';\r\nimport Header from \"./components/header\";\r\nimport Main from \"./components/main\";\r\nimport Sidebar from \"./components/sidebar\";\r\n\r\n\r\nfunction App() {\r\n  return (\r\n      <div className=\"main-wrapper\">\r\n          <div className=\"header\">\r\n              <Header />\r\n          </div>\r\n\r\n          <div className=\"inner-wrapper\">\r\n              <div className=\"sidebar\">\r\n                  <Sidebar />\r\n              </div>\r\n              <div className=\"main\">\r\n                  <Main />\r\n              </div>\r\n\r\n\r\n          </div>\r\n\r\n      </div>\r\n  );\r\n}\r\n\r\nexport default App;\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	
++++ b/src/App.js	
+@@ -1,10 +1,9 @@
+-
+-import './App.css';
+ import Header from "./components/header";
+ import Main from "./components/main";
+ import Sidebar from "./components/sidebar";
++import Todo from "./components/todo";
+ 
+-
++import './App.css';
+ function App() {
+   return (
+       <div className="main-wrapper">

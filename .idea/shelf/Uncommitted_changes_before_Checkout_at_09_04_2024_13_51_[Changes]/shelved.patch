@@ -1,0 +1,17 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport './App.css';\r\n\r\nfunction App() {\r\n  return (\r\n    <div>\r\n\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision e5d03fb97a73ff6059e790b6d9078c39ed155a9e)
++++ b/src/App.js	(date 1712659688535)
+@@ -1,3 +1,4 @@
++
+ 
+ import './App.css';
+ 
+diff --git a/src/components/todo.js b/src/components/todo.js
+new file mode 100644

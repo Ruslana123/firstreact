@@ -1,0 +1,28 @@
+Index: src/components/todo.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/todo.js b/src/components/todo.js
+new file mode 100644
+--- /dev/null	
++++ b/src/components/todo.js	
+@@ -0,0 +1,18 @@
++import React from "react";
++
++class  Todo extends React.Component {
++    constructor(props) {
++        super(props);
++    }
++
++    render() {
++        return (
++            <div>
++                <h1>My first React</h1>
++
++            </div>
++        )
++    }
++}
++
++export default Todo;

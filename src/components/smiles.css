@@ -1,0 +1,34 @@
+.emoji {
+   font-size: 2em;
+   text-align: center;
+   cursor: pointer;
+}
+
+.emoji:hover {
+   transform: scale(1.2);
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.btn {
+   margin-top: 30px;
+   background: dimgrey;
+   color: white;
+   border-radius: 10px;
+   height: 30px;
+}
+
+.winner {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 2em;
+}
+
+.title {
+   font-size: 2em;
+}
