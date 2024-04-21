@@ -7,7 +7,13 @@ const ContactForm = ({ onSave, onCancel }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSave({ firstName, lastName, phone });
+        const newContact = {
+            id: Date.now(),
+            firstName,
+            lastName,
+            phone,
+        };
+        onSave(newContact);
         setFirstName('');
         setLastName('');
         setPhone('');
@@ -15,26 +21,41 @@ const ContactForm = ({ onSave, onCancel }) => {
 
     return (
         <div>
-            <h2>Форма контакта</h2>
+            <h2>Додати новий контакт</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Имя:</label>
-                    <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                    <label htmlFor="firstName">Ім'я:</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
                 </div>
                 <div>
-                    <label>Фамилия:</label>
-                    <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <label htmlFor="lastName">Прізвище:</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
                 </div>
                 <div>
-                    <label>Телефон:</label>
-                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                    <label htmlFor="phone">Телефон:</label>
+                    <input
+                        type="text"
+                        id="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
                 </div>
-                <button type="submit">Сохранить</button>
-                <button type="button" onClick={onCancel}>Отмена</button>
+                <button type="submit">Зберегти</button>
+                <button type="button" onClick={onCancel}>Скасувати</button>
             </form>
         </div>
     );
 };
 
-export default ContactForm
+export default ContactForm;
 

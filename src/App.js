@@ -21,12 +21,17 @@ const App = () => {
             });
     }, []);
 
-    const handleSave = (contact) => {
-        setContacts([...contacts, contact]);
+
+    const handleSaveContact = (newContact) => {
+        setContacts([...contacts, newContact]);
         toggleForm();
     };
 
-    const handleDelete = (id) => {
+    const handleCancel = () => {
+        toggleForm();
+    };
+
+    const handleDeleteContact = (id) => {
         setContacts(contacts.filter(contact => contact.id !== id));
     };
 
@@ -36,10 +41,10 @@ const App = () => {
 
     return (
         <div>
-            <h1>Contacts</h1>
-            <ContactList contacts={contacts} onDelete={handleDelete} />
-            <button onClick={toggleForm}>{showForm ? 'Скрыть форму' : 'Добавить контакт'}</button>
-            {showForm && <ContactForm onSave={handleSave} onCancel={toggleForm} />}
+            <h1>Контакти</h1>
+            <ContactList contacts={contacts} onDelete={handleDeleteContact} />
+            <button onClick={toggleForm}>{showForm ? 'Hide Form' : 'Додати контакт'}</button>
+            {showForm && <ContactForm onSave={handleSaveContact} onCancel={handleCancel} />}
         </div>
     );
 };

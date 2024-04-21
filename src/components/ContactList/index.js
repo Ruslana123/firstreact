@@ -1,29 +1,23 @@
 import React from 'react';
+import ContactItem from '../../components/ContactItem';
 
 const ContactList = ({ contacts, onDelete }) => {
     console.log(contacts);
     return (
         <div>
-            <h2>Список контактов</h2>
+            <h2>Контакти</h2>
             <table>
                 <thead>
                 <tr>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
+                    <th>Ім'я</th>
+                    <th>Прізвище</th>
                     <th>Телефон</th>
-                    <th>Действие</th>
+                    <th>Дія</th>
                 </tr>
                 </thead>
                 <tbody>
                 {contacts.map(contact => (
-                    <tr key={contact.id}>
-                        <td>{contact.firstName}</td>
-                        <td>{contact.lastName}</td>
-                        <td>{contact.phone}</td>
-                        <td>
-                            <button onClick={() => onDelete(contact.id)}>Удалить</button>
-                        </td>
-                    </tr>
+                    <ContactItem key={contact.id} contact={contact} onDelete={onDelete} />
                 ))}
                 </tbody>
             </table>
