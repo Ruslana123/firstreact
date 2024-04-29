@@ -55,9 +55,9 @@ function FormikFormPage() {
                        <Field type="text" name="username" placeholder="user name"/>
                        {errors.username && touched.username && <span style={{color: "red"}}>{errors.username}</span>}
                        <Field type="text" name="email" placeholder="email"/>
-                       {errors.email && <span style={{color: "red"}}>{errors.email}</span>}
+                       {errors.email && touched.email && <span style={{color: "red"}}>{errors.email}</span>}
                        <Field type="tel" name="phone" placeholder="phone" />
-                       {errors.phone && <span style={{color: "red"}}>{errors.phone}</span>}
+                       {errors.phone && touched.phone && <span style={{color: "red"}}>{errors.phone}</span>}
                        <label>
                            <Field type="checkbox" name="isSubscribed"/>
                            Підписка на новини
