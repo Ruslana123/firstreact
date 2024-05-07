@@ -1,0 +1,48 @@
+Index: src/pages/UserList/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useState, useEffect } from 'react';\r\nimport { Link } from 'react-router-dom';\r\n\r\nconst UserList = () => {\r\n    const [users, setUsers] = useState([]);\r\n\r\n    useEffect(() => {\r\n        fetch('https://jsonplaceholder.typicode.com/users')\r\n            .then(response => response.json())\r\n            .then(data => setUsers(data));\r\n    }, []);\r\n\r\n    return (\r\n        <div>\r\n            <h2>User List</h2>\r\n            <ul>\r\n                {users.map(user => (\r\n                    <li key={user.id}>\r\n                        {user.name}\r\n                        <Link to={`/albums?userId=${user.id}`}><button>Album</button></Link>\r\n                    </li>\r\n                ))}\r\n            </ul>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default UserList;\r\n
+===================================================================
+diff --git a/src/pages/UserList/index.js b/src/pages/UserList/index.js
+--- a/src/pages/UserList/index.js	
++++ b/src/pages/UserList/index.js	
+@@ -9,6 +9,7 @@
+             .then(response => response.json())
+             .then(data => setUsers(data));
+     }, []);
++    
+ 
+     return (
+         <div>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8a5306f6-69ed-468f-948d-0e5ea5e7dc44\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/pages/AlbumList/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/pages/PhotoList/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/pages/UserList/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"hw-40\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fYSN2h5kLiK3civgVZqci4Vm85\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;hw-40-1&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8a5306f6-69ed-468f-948d-0e5ea5e7dc44\" name=\"Changes\" comment=\"\" />\r\n      <created>1713976476045</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713976476045</updated>\r\n      <workItem from=\"1713976478559\" duration=\"2927000\" />\r\n      <workItem from=\"1713979823427\" duration=\"5482000\" />\r\n      <workItem from=\"1714069335131\" duration=\"2349000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,11 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="8a5306f6-69ed-468f-948d-0e5ea5e7dc44" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/pages/AlbumList/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/pages/PhotoList/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/pages/UserList/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/pages/UserList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserList/index.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -66,7 +63,8 @@
+       <updated>1713976476045</updated>
+       <workItem from="1713976478559" duration="2927000" />
+       <workItem from="1713979823427" duration="5482000" />
+-      <workItem from="1714069335131" duration="2349000" />
++      <workItem from="1714069335131" duration="4177000" />
++      <workItem from="1714147178875" duration="1577000" />
+     </task>
+     <servers />
+   </component>
