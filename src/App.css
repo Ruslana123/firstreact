@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+}
+
+input:checked + span {
+  text-decoration: line-through;
+
+}
